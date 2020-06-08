@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,15 +7,15 @@ public class PlayerController : MonoBehaviour
 
 
     //Brackeys
-     public static Vector2 Position;
+    public static Vector2 Position;
     // public float startMoveSpeed = 5f;
     // private float moveSpeed;
     // public float moveSmooth = .3f;
     // Vector2 movement = Vector2.zero;
     // Vector2 velocity = Vector2.zero;
-     Vector2 mousePos = Vector2.zero;
+    Vector2 mousePos = Vector2.zero;
 
-        //thrustertutorial
+    //thrustertutorial
     private Rigidbody2D rb;
     float maxVelocity = 3f;
 
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         //Brackeys
         //movement.x = Input.GetAxis("Horizontal");
         //movement.y = Input.GetAxis("Vertical");
-         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //
         // transform.localScale = Vector3.one;// * Progression.Growth;
         // moveSpeed = startMoveSpeed; //* Progression.Growth;
@@ -56,9 +56,9 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(x, y);
     }
     //thrustertutorial
-    private void Thrust(float forwardAmount,float sideWaysAmount)
+    private void Thrust(float forwardAmount, float sideWaysAmount)
     {
-        Vector2 force = Vector2.up * forwardAmount + Vector2.right * sideWaysAmount ;
+        Vector2 force = Vector2.up * forwardAmount + Vector2.right * sideWaysAmount;
 
         rb.AddForce(force);
     }
@@ -85,10 +85,10 @@ public class PlayerController : MonoBehaviour
         {
             float Xaxis = Input.GetAxis("Horizontal2");
             float yAxis = Input.GetAxis("Vertical2");
-            Debug.Log("X: "+Xaxis);
+            Debug.Log("X: " + Xaxis);
             Debug.Log("Y: " + yAxis);
 
-            float angle = Mathf.Atan2(yAxis,Xaxis) * Mathf.Rad2Deg-90f;
+            float angle = Mathf.Atan2(yAxis, Xaxis) * Mathf.Rad2Deg - 90f;
             //Target.Set(target, 90, 0);
             //Quaternion rotation = Quaternion.LookRotation(Target);
             //transform.rotation = rotation;
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
         }
         else
-        { 
+        {
             Vector2 lookDir = mousePos - rb.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
             rb.rotation = angle;
