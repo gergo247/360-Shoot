@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3f23d7215f5d0845a4ce9bf6ea90935, type: 3}
-  m_Name: Base weapon
+  m_Name: RayCast
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 419686874256634865, guid: 9395219ebb144d843b495469e3d05e64,
-    type: 3}
-  fireRate: 76.1
-  shootsRaycasts: 0
+  bulletPrefab: {fileID: 0}
+  fireRate: 10
+  shootsRaycasts: 1
   raycastDamage: 20
